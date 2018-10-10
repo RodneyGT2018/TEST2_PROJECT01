@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Event Template </title>
+
+    <!-- Ajax Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <!-- Firebase link -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+
+    <!-- CSS  -->
+    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbMW1zoS4wDZPiww8JT1EDrUr0jfbeqw0&callback=initMap"
+      async defer></script>
+
+    <!-- javascript -->
+    <script src="assets/javascript/app-revised.js"></script>
+
+
+  </head>
+
+<body>
+  <!-- Zone 1  -->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Halloween Boogie Night</a>
+      <ul class="right hide-on-med-and-down">
+        <ul id="nav-mobile" class="sidenav"></ul>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <!--   Body Section   -->
+  <div class="container">
+   
+    <!-- Zone 3  -->
+    <div class="section icon-block">
+       <!-- Zone 2  -->
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m8">
+            <span id="party-name"></span>
+            <span id="party-date"></span>
+            <span id="party-time"></span>
+            <span>Attendance: </span><span id="nmbr-confirmed"></span>
+          </div>
+          <div class="col s12 m4">
+            <div class="right-align">
+              <a class="btn-halloween btn" href="#modal1">Sign Up</a>
+              <a class="btn-halloween btn" href="#modal1">Sign In</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and </p>
+        </div>
+         <div class="row">
+          <a class="btn-halloween-org btn"  href="#modal2">Click Here to Add items</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m5 responsive-table">
+         <table>
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Qty</th>
+              <th>Add Items</th>
+            </tr>
+          </thead>
+          <tbody class = "responsive-table-body-req">
+
+          </tbody>
+        </table>
+        </div>
+         <div class="col s12 m7 responsive-table">
+         <table>
+          <thead>
+            <tr>
+              <th>Items</th>
+              <th>Qty</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody class = "responsive-table-body-res">
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <!-- Zone 5  -->     
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5>Costume Finder</h5>
+            <div class="container">
+              <div id="content">
+              <h3><button id="reset">Reset »</button></h3>
+              <input id="search" type="text" placeholder="search text" />
+              <button id="submit">Submit</button>
+              <div id="outputDiv"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div id="event-location"></div>
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our
+            full time job. Any amount would help support and continue development on this project and is greatly
+            appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-copyright">
+      <div class="container">
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Structure -->
+
+   <!-- Modal Structure User Adding Items --> 
+  <div id="modal2"  class="modal row setup-content">
+     <div class="input-field col s6">
+          <label class="control-label">Item</label>
+          <input id="add-item-name"  maxlength="100" type="text" required="required"  class="form-control" placeholder="Item Name"  />
+      </div>
+       <div class="input-field col s6">
+          <label class="control-label">Quantity</label>
+          <input id="add-item-qty"  maxlength="100" type="text" required="required" class="form-control" placeholder="Quantity Number"  />
+      </div>
+       <button id="submit-item-name" class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Submit</button>
+  </div>
+
+  <div id="modal1" class="modal">
+    <!-- Navigation -->
+    <div class="stepwizard">
+      <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+          <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+          <p>Step 1</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+          <p>Step 2</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <p>Step 3</p>
+        </div>
+         <div class="stepwizard-step">
+          <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+          <p>Step 4</p>
+        </div>
+      </div>
+    </div>
+    <form role="form">
+
+      <!-- Step 1 -->
+
+      <div class="row setup-content" id="step-1">
+        <div class="col s12">
+          <div class="col s12">
+              <div class="col s12">
+                  <div class="input-field col s12">
+                      <label class="control-label">Name</label>
+                      <input id="host-name"  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  />
+                  </div>
+                  <div class="input-field col s12">
+                      <label class="control-label">Email Address</label>
+                      <input id="host-email" maxlength="100" type="text" required="required" class="form-control" placeholder="johndoe@email.com" />
+                  </div>
+                  <div class="input-field col s12">
+                      <label class="control-label">Phone Number</label>
+                      <input id="host-phone" maxlength="100" type="text" required="required" class="form-control" placeholder="(121-122-4444)" />
+                  </div>
+                  <button class="btn btn-primary nextBtn btn-lg pull-right btn-halloween" type="button" >Next</button>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+
+      <div class="row setup-content" id="step-2">
+        <div class="col s12">
+            <div class="col-md-12">
+                <div class="input-field col s12">
+                    <label class="control-label">Event Name</label>
+                    <input id="event-name" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Name" />
+                </div>
+                <div class="input-field col s12">
+                    <label class="control-label">Event Date</label>
+                    <input id="event-date" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Date"  />
+                </div>
+                <div class="input-field col s12">
+                  <label class="control-label">Event Time</label>
+                  <input id="event-time" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Location"  />
+                </div>
+                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+            </div>
+        </div>
+      </div>
+
+       <!-- Step 3 -->
+
+      <div class="row setup-content" id="step-3">
+        <div class="col s12">
+            <div class="col-md-12">
+                <div class="input-field col s12">
+                    <label class="control-label">Address</label>
+                    <input id="event-address" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Name" />
+                </div>
+                <div class="input-field col s4">
+                    <label class="control-label">City</label>
+                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Date"  />
+                </div>
+                <div class="input-field col s4">
+                  <label class="control-label">State</label>
+                  <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Location"  />
+                </div>
+                <div class="input-field col s4">
+                  <label class="control-label">Zip</label>
+                  <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Event Location"  />
+                </div>
+                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+            </div>
+        </div>
+      </div>
+
+       <!-- Step 4 -->
+
+      <div class="setup-content" id="step-4">
+        <div class="row">
+          <div class="input-field col s10">
+              <label class="control-label">Items Needed</label>
+              <input id="items-needed-1" maxlength="200" type="text" required="required" class="form-control item-name" placeholder="Enter Event Name" />
+          </div>
+          <div class="input-field col s2">
+              <label class="control-label">Number</label>
+              <input id="quantity-needed-1" maxlength="200" type="text" required="required" class="form-control item-number" placeholder="" />
+          </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s10">
+              <label class="control-label">Items Needed</label>
+              <input id="items-needed-2" maxlength="200" type="text" required="required" class="form-control item-name" placeholder="Enter Event Name" />
+          </div>
+          <div class="input-field col s2">
+              <label class="control-label">Number</label>
+              <input id="quantity-needed-2" maxlength="200" type="text" required="required" class="form-control item-number" placeholder="" />
+          </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s10">
+              <label class="control-label">Items Needed</label>
+              <input id="items-needed-3" maxlength="200" type="text" required="required" class="form-control item-name" placeholder="Enter Event Name" />
+          </div>
+          <div class="input-field col s2">
+              <label class="control-label">Number</label>
+              <input id="quantity-needed-3" maxlength="200" type="text" required="required" class="form-control item-number" placeholder="" />
+          </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s10">
+              <label class="control-label">Items Needed</label>
+              <input id="quantity-needed-4" maxlength="200" type="text" required="required" class="form-control item-name" placeholder="Enter Event Name" />
+          </div>
+          <div class="input-field col s2">
+              <label class="control-label">Number</label>
+              <input id="quantity-needed-4" maxlength="200" type="text" required="required" class="form-control item-number" placeholder=""/>
+          </div>
+        </div>
+         <button id="submit-finish-btn" class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+      </div>
+    </form>
+
+        <script src="assets/javascript/init.js"></script>
+        <script src="assets/javascript/Flickr.js"></script>
+
+</body>
+
+</html>
